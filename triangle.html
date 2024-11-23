@@ -1,0 +1,25 @@
+<table border="1">
+    <tr>
+        <td>value b</td>
+        <td><input type="text" placeholder="enter value b" id="b"></td>
+    </tr>
+    <tr>
+        <td>value h</td>
+        <td><input type="text" placeholder="enter value h" id="h"></td>
+    </tr>
+    <tr>
+        <td><input type="button"value="click"onclick="rev()"></td>
+    </tr>
+</table>
+
+<h1 id="ans"></h1>
+
+<script>
+     function rev()
+     {
+     var h=parseInt(document.getElementById('h').value);
+     var b=parseInt(document.getElementById('b').value);
+    var triangle=0.5*h*b;
+    document.getElementById('ans').innerHTML=triangle;
+     }
+</script>

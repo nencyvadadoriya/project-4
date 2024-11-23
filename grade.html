@@ -1,0 +1,33 @@
+<table border="1">
+    <tr>
+        <td>value s1</td>
+        <td><input type="text" id="s1" placeholder="enter your of s1"></td>
+    </tr>
+    <tr>
+        <td>value s2</td>
+        <td><input type="text" id="s2" placeholder="enter your of s2"></td>
+    </tr>
+    <tr>
+        <td>value s3</td>
+        <td><input type="text" id="s3" placeholder="enter your of s3"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="click" onclick="res()"></td>
+    </tr>
+</table>
+
+<h1 id="tot"></h1>
+<h2 id="ans"></h2>
+
+<script>
+    function res()
+    {
+        var s1=parseInt(document.getElementById('s1').value);
+        var s2=parseInt(document.getElementById('s2').value);
+        var s3=parseInt(document.getElementById('s3').value);
+        var total=s1+s2+s3;
+        document.getElementById('tot').innerHTML=total;
+        var per=total/3;
+        document.getElementById('ans').innerHTML="percentege :"+per+"%";
+    }
+</script>

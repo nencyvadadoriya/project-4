@@ -1,0 +1,81 @@
+
+<style>
+    /* .container{ */
+        /* margin: 0 auto; */
+        /* padding: 0 15px; */
+        /* max-width: 1140px; */
+    /* } */
+    .box1{
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        
+    }
+    
+    .box{
+        width: 500px;
+        height: 300px;
+        background-color: rgba(255, 0, 0, 0.461);
+        border-radius: 10px;
+        color: black;
+        box-shadow: 0 0 20px black;
+    }
+    .text-center{
+        text-align: center;
+    }
+    #city{
+        width:80%;
+        text-align: center;
+        color: black;
+        padding: 10px;
+        margin-top:20px ;
+    }
+    input{
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-size: 20px;
+    }
+</style>
+
+
+
+<body>
+
+<div class="container">
+    <div class="box1">
+        <div class="box text-center">
+             <input type="text" placeholder="Enter city name" id="city">
+             <input type="button" value="click" onclick="getweather()">
+             <h4 id="name"></h4>
+            <p id="clouds"></p>
+            <p id="temp"></p>
+            <p id="deg"></p>
+            <p id="speed"></p>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    function getweather(){
+        var city = document.getElementById('city').value;
+        
+        $.ajax({
+            url: `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${'93fc085cf4a78467c78708ed3bda4ecc'}`,
+            type: "get",
+            success: function(data){
+                console.log(data);
+                document.getElementById('name').innerHTML="city name:-"+data.name;
+                document.getElementById('clouds').innerHTML="clouds:-"+data.clouds.all;
+                document.getElementById('temp').innerHTML="temprature:-"+data.main.temp;
+                document.getElementById('deg').innerHTML="degree:-"+data.wind.deg;
+                document.getElementById('speed').innerHTML="speed:-"+data.wind.speed;
+
+            },
+        });
+    }
+</script>
+</body>
+weather.html
+Displaying weather.html.

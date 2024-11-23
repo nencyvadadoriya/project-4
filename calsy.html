@@ -1,0 +1,121 @@
+<form>
+    <input type="text"id="result"placeholder="0">
+    <br><br>
+    <input type="button"value="C"id="allClear"style="background-color:#AAD7D9;color:#538392;">
+    <button type="button"value="CE"id="clear"style="background-color:#AAD7D9;color:#538392;">CE</button>
+    <input type="button"value="/"style="background-color:#AAD7D9;color:#538392;">
+    <input type="button"value="*"style="background-color:#AAD7D9;color:#538392;">
+    <br><br>
+    <input type="button"value="7">
+    <input type="button"value="8">
+    <input type="button"value="9">
+    <input type="button"value="-"style="background-color:#AAD7D9;color:#538392;">
+    <br><br>
+    <input type="button"value="4">
+    <input type="button"value="5">
+    <input type="button"value="6">
+    <input type="button"value="+"style="background-color:#AAD7D9;color:#538392;">
+    <br><br>
+    <input type="button"value="1">
+    <input type="button"value="2">
+    <input type="button"value="3">
+    <input type="button"value="%"id="per"style="background-color:#AAD7D9;color:#538392;">
+    <br><br>
+    <input type="button"value="0">
+    <input type="button"value="00">
+    <input type="button"value="-/+"id="neg"style="background-color:#AAD7D9;color:#538392;">
+    <button type="button"value="="id="output"style="background-color:#627254;">=</button>
+</form>
+
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background: url('https://cdn.dribbble.com/users/2156796/screenshots/19992280/media/7d2ee3a4d15d1f335419059066067694.gif');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 10px;
+        font-size: 25px;
+        text-align:right;
+        background-color:black;
+        color:white;
+        border:none;
+    }
+    button , input[type="button"]{
+        width: 60px;
+        height: 60px;
+        margin: 7px;
+        font-size: 20px;
+        border: none;
+        border-radius: 5px;
+        background-color:#538392;
+        color:white;
+    }
+    form{
+        width: 350px;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 10px;
+        background-color:#000;
+        box-shadow:5px 10px 8px 10px #888888;
+        position: absolute;
+        top:15%;
+        left:38%;
+    }
+</style>
+<script>
+    var btn=document.querySelectorAll('input');
+    var result = document.querySelector("#result");
+    var output = document.querySelector("#output");
+    var all = document.querySelector('#allClear');
+    var clear = document.querySelector('#clear');
+    var per = document.querySelector('#per');
+    var neg = document.querySelector('#neg');
+
+    for(var i=0;i<btn.length;i++){
+        btn[i] .addEventListener('click',function(){
+            var lastChar = result.value.slice(-1);
+
+            if(lastChar == '+' || lastChar == '-' || lastChar == '*' || lastChar == '/'){
+                if(this.value == '+' || this.value == '-' || this.value == '*' || this.value == '/'){
+                    result.value = result.value;
+                }
+                else{
+                    result.value += this.value;
+                }
+            }
+            else{
+                result.value += this.value;
+            }
+        });
+    }
+    output.addEventListener('click',function(){
+        result.value = eval(result.value);
+    });
+    all.addEventListener('click',function(){
+        result.value ="";
+    });
+
+    clear.addEventListener('click',function(){
+        var demo = result.value;
+        result.value = demo.slice(0,demo.length-1);
+        demo.value=demo;
+    });
+    per.addEventListener('click',function(){
+        var abc = result.value;
+        result.value = parseInt(result.value)/100;
+        abc=result.value;
+    });
+    neg.addEventListener('click',function(){
+        result.value = -(parseInt(result.value));
+    });
+</script>

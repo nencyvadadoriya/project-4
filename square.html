@@ -1,0 +1,20 @@
+<table border="1">
+    <tr>
+        <td>value a</td>
+        <td><input type="text" placeholder="enter value a" id="a"></td>
+    </tr>
+    <tr>
+        <td><input type="button"value="click"onclick="rev()"></td>
+    </tr>
+</table>
+
+<h1 id="ans"></h1>
+
+<script>
+     function rev()
+     {
+     var a=parseInt(document.getElementById('a').value);
+    var square=a*a;
+    document.getElementById('ans').innerHTML=square;
+     }
+</script>

@@ -1,0 +1,25 @@
+<table border="1">
+    <tr>
+        <td>value of p</td>
+        <td><input type="text" id="p"placeholder="enter value of p"></td>
+    </tr>
+    <tr>
+        <td>value of r</td>
+        <td><input type="text" id="r"placeholder="enter value of r"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="click" onclick="tot()"></td>
+    </tr>
+</table>
+<h1 id="total"></h1>
+<h1 id="t"></h1>
+<script>
+    function tot()
+    {
+        var p=parseInt(document.getElementById('p').value);
+        var r=parseInt(document.getElementById('r').value);
+        var t=1;
+        var total=p*r*t/100;
+        document.getElementById('total').innerHTML="total is :"+total;
+    }
+</script>

@@ -1,0 +1,31 @@
+<table border="1">
+    <tr>
+        <td>value ep</td>
+        <td><input type="text" id="ep" placeholder="value of ep"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="click" onclick="salary()"></td>
+    </tr>
+</table>
+
+<h1 id="tot"></h1>
+<h2 id="gross"></h2>
+<h2 id="tax"></h2>
+<h2 id="da"></h2>
+<h2 id="hra"></h2>
+
+<script>
+    function salary() {
+        var ep=parseInt(document.getElementById('ep').value);
+        var hra=5*ep/100;
+        document.getElementById('hra').innerHTML="hra is :"+hra;
+        var da=2*ep/100;
+        document.getElementById('da').innerHTML="da is :"+da;
+        var tax=5*ep/100;
+        document.getElementById('tax').innerHTML="tax is :"+tax;
+        var total=ep+hra+da;
+        document.getElementById('tot').innerHTML="total is :"+total;
+        var gross=total-tax;
+        document.getElementById('gross').innerHTML="gross is :"+gross;
+    }
+</script>

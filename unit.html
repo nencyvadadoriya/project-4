@@ -1,0 +1,35 @@
+<table border="1">
+    <tr>
+        <td>enter the unit</td>
+        <td><input type="text" id="u"placeholder="eneter value of unit"></td>
+    </tr>
+    <tr>
+        <td>enter the rate</td>
+        <td><input type="text" id="r"placeholder="eneter value of rate"></td>
+    </tr>
+    <tr>
+        <td><input type="button"value="click" onclick="rev()"></td>
+    </tr>
+</table>
+<h1 id="total"></h1>
+<h2 id="final"></h2>
+<h2 id="gst"></h2>
+<h2 id="tax"></h2>
+<h2 id="t"></h2>
+<script>
+    function rev()
+    {
+        var u=parseInt(document.getElementById('u').value);
+        var r=parseInt(document.getElementById('r').value);
+        var t=u*r;
+        document.getElementById('t').innerHTML="total unit is :"+t;
+        var gst=10*t/100;
+        document.getElementById('gst').innerHTML="gst is :"+gst;
+        var tax=5*t/100;
+        document.getElementById('tax').innerHTML="gst is :"+tax;
+        var total=gst+tax;
+        document.getElementById('tax').innerHTML="total is :"+total;
+        var final=t+total;
+        document.getElementById('final').innerHTML="final total is :"+final;
+    }
+</script>

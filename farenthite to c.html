@@ -1,0 +1,20 @@
+<table border="1">
+    <tr>
+        <td>value farenthite</td>
+        <td><input type="text" placeholder="enter value farenthite" id="f"></td>
+    </tr>
+    <tr>
+        <td><input type="button"value="click"onclick="rev()"></td>
+    </tr>
+</table>
+
+<h1 id="ans"></h1>
+
+<script>
+     function rev()
+     {
+     var f=parseInt(document.getElementById('f').value);
+    var c=(f-32)/1.8;
+    document.getElementById('ans').innerHTML=c;
+     }
+</script>

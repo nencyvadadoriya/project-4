@@ -1,0 +1,54 @@
+<table border="1">
+    <tr>
+        <td>value A</td>
+        <td><input type="text" placeholder="enter value a" id="a"></td>
+    </tr>
+    <tr>
+        <td>value b</td>
+        <td><input type="text" placeholder="enter value b" id="b"></td>
+    </tr>
+    <tr>
+        <td><input type="button"value="click"onclick="rev()"></td>
+    </tr>
+</table>
+
+<h1 id="ans"></h1>
+
+<script>
+    // var a=10,b=20,c=a+b;
+    // console.log(c);
+
+    // var x=10,y=20,z=x-y;
+    // console.log(z);
+
+    // var p=10,q=20,r=p*q;
+    // console.log(r);
+
+   function rev()
+   {
+
+    // ARITHMETIC
+
+    var a=parseInt(document.getElementById('a').value);
+    var b=parseInt(document.getElementById('b').value);
+    var c=a+b;
+    document.getElementById('ans').innerHTML=a+"+"+b+"="+c;
+
+   
+    // var c=a-b;
+    // document.getElementById('ans').innerHTML=a+"-"+b+"="+c;
+
+    // var c=a*b;
+    // document.getElementById('ans').innerHTML=a+"*"+b+"="+c;
+
+   
+    // var c=a/b;
+    // document.getElementById('ans').innerHTML=a+"/"+b+"="+c;
+
+  
+    // var c=a%b;
+    // document.getElementById('ans').innerHTML=a+"%"+b+"="+c;
+
+
+   }
+</script>

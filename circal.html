@@ -1,0 +1,20 @@
+<table border="1">
+    <tr>
+        <td>value r</td>
+        <td><input type="text" placeholder="enter value r" id="r"></td>
+    </tr>
+    <tr>
+        <td><input type="button"value="click"onclick="rev()"></td>
+    </tr>
+</table>
+
+<h1 id="ans"></h1>
+
+<script>
+     function rev()
+     {
+     var r=parseInt(document.getElementById('r').value);
+    var circal=3.14*r*r;
+    document.getElementById('ans').innerHTML=circal;
+     }
+</script>
